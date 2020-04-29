@@ -1,0 +1,164 @@
+/* ******/
+/*Media */
+/********/
+@media (max-width: 600px) {
+  #content {
+    position: relative;
+  }
+
+  #nav {
+    position: relative;
+  }
+
+  #fueldisclaimer {
+    margin-top: 100px;
+  }
+}
+
+/* ******/
+/*Id's  */
+/********/
+#nav {
+  margin-top: 0;
+  top: 0;
+  z-index: 100;
+  position: fixed;
+  display: block;
+  width: 100%
+}
+
+#content {
+  margin-top: 160px;
+  display:block;
+  bottom: 0;
+}
+
+#heading {
+  padding: 20px;
+}
+
+/* *******/
+/*Classes*/
+/*********/
+.heading{
+  margin-bottom: 0;
+}
+
+.boldStepNumber {
+  background-color: inherit;
+  color: yellow;
+  font-size:55px;
+  padding: 8px 10px 30px 0px;
+
+  border-radius: 6px;
+}
+
+.description {
+  background-color: inherit;
+  color: yellow;
+  font-size: 20px;
+  padding-left: 92px;
+  padding-bottom: 10px;
+}
+.descriptionList{
+  background-color: inherit;
+  color: yellow;
+  font-size: 20px;
+  padding-left: 110px;
+  top: 0px;
+  padding-bottom: 10px;
+}
+
+.stepHeader {
+  font-size: 25px;
+}
+
+.disclaimer {
+  background-color: inherit;
+  color: red;
+  text-transform: uppercase;
+  border: 2px solid red;
+}
+
+.ptext {
+  background-color: inherit;
+  color: yellow;
+  font-weight: normal;
+  font-size: 25px;
+}
+
+.changelogentry {
+  margin: 50px;
+}
+
+
+.linkToWebsite {
+  background-color: inherit;
+  color: white;
+}
+
+.linkToWebsite:hover {
+  background-color: inherit;
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
+nav a {
+  transition: background-color 0.25s;
+}
+
+
+section {
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+
+section + section{
+  margin-bottom: 0px;
+}
+
+footer {
+  position: fixed;
+  height: 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+}
+
+
+
+ol{
+  list-style: none;
+}
+
+img{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
+  height: auto;
+}
+
+dt {
+  background-color: inherit;
+  color: white;
+
+  margin-top: 20px;
+}
+
+img.imgRight {
+  float: right
+}
+
+img.imgLeft {
+  float: left;
+}
+
+li.manuallist {
+  border-radius: 5px;
+  background-color: black;
+  color:white;
+  margin: 20px;
+}
