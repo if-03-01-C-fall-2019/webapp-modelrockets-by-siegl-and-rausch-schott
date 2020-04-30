@@ -104,6 +104,17 @@
   font-weight: bold;
 }
 
+.linkToWebsiteBLACK {
+  background-color: inherit;
+  color: black;
+}
+
+.linkToWebsiteBLACK:hover {
+  background-color: inherit;
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+}
 
 nav a {
   transition: background-color 0.25s;

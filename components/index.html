@@ -9,12 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/modelrockets.css">
 
-    <script src="../js/modelrockets.js"></script>
-    <script>
-      setContentMarginTop();
-    </script>
   </head>
-  <body onresize="javascript:setContentMarginTop()">
+  <body>
     <section id="nav">
         <!-- Navigationbar !-->
         <nav id="navbar" class="w3-bar w3-black w3-card-4">
@@ -49,8 +45,12 @@
                 <h2 class="display-4">Rocket Engine</h2>
                 <br>
                 <p>
-                  The Rocket engine is one of the most important part of a rocket! It allows the rocket to get from the ground.
+                  The Rocket engine is one of the most important part of a rocket!
                   The most common thrust to weight ratio is 1:5, that means 5 times the strength of the earth's gravitational acceleration.
+                  Model rocket motors, also called “engines”, are what make a rocket go. The propellant, a slow-burning delay cap, and then black powder used as the ejection charge.
+                  These are all wrapped up in a casing that is made of paper, plastic or aluminum. Motors are all single-flight use, though the casing may be reusable.
+                  Model rocket motors are made up of a fuel and an oxidizer, this is the propellant. These two ingredients can vary but both are required to produce the appropriate thrust.
+                  The most common model rocket engines are made of black powder and have only three ingredients: charcoal, potassium nitrate, and sulfur.
                 </p>
               </div>
             </div>
@@ -70,7 +70,10 @@
                 <br>
                 <p>
                   The case not only provides the rocket structual stability, it also makes it easier to organize the interior of the rocket.
-                  You can build different sections for each part of the rocket.For example the boardcomputer and the payload section.
+                  You can build different sections for each part of the rocket.For example the boardcomputer and the payload section. It is also
+                  important to belance the rocket. The CoM (Centre of Mass) needs to be above the CoP (Centre of Preassure) during flight.
+                  Sometimes it hard to archive that beacause of the rocket engine which is the heaviest part of the rocket. In some cases adding
+                  a weight to the nosecone can help, however it also adds weight to the entire rocket which could lead that it can't lift of anymore.
                 </p>
               </div>
             </div>
@@ -95,7 +98,9 @@
                   Nowadays fins are not always the way to go anymore, at least for real rockets.
                   The reason for this is that although fins do work just fine, the concept is pretty old and
                   today it is possible to make small adjustments during flight using the exhaust. This is called vectoring.
-                  SpaceX's Falcon 9 is a good example for a rocket without fins.
+                  SpaceX's Falcon 9 is a good example for a rocket without fins. On modelrockets fins are found in two ways,
+                  1: they're placed aligned with the flight direction causing the rocket to get more stability the faster it is
+                  2: they're placed at a minor(about 1°) off flight direction which can help gathering stability even at low speeds due to roatation.
                 </p>
               </div>
             </div>
@@ -115,8 +120,13 @@
                 <h2 class="display-4">Parachute</h2>
                 <br>
                 <p>
-                  The parachute gives the rocket the ability to fall safely to earth.
-                  It's made out of a special fabric for parachutes.
+                  The parachute is the reason why a modelrocket falls seafly to earth.
+                  It's made out of a special fabric for parachutes which provides 10x more stability than
+                  a normal fabric. However when you want to land your modelrocket you don't need to have a parachute,
+                  if you have enought time, patient, and a bit luck you can repulsivly land your modelrocket. If you're interested
+                  in this topic you can find a video <a class="linkToWebsiteBLACK" href="https://www.youtube.com/watch?v=yx5zLykjKy8">HERE<a/>.
+                  But in the beginning a normal parachute can be challenging enough. Here are a few points you need to calculate in: Have i got the right size for my modelrocket?
+                  Is the attachment point on the rocket suitable for the structual loads it will experience? Is my deployment method safe and relaiable? and finally what could go wrong and how can I compensate.
                 </p>
               </div>
             </div>
@@ -128,7 +138,7 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-6 order-lg-2">
-              <img class="imgRight" src="img/rocket_computer.png" alt="Rocket Boardcomputer">
+              <img class="imgRight" src="img/rocket_computer.png" alt="Boardcomputer of a rocket">
             </div>
 
             <div class="col-lg-6 order-lg-1">
@@ -136,7 +146,11 @@
                 <h2 class="display-4">Boardcomputer</h2>
                 <br>
                 <p>
-                  The boardcomputer collects all the data and is responsible for starting and controlling the rocket inflight.
+                  The boardcomputer is the most important part of the modelrocket it can control the fins to follow a programmed flightpath, it can shut the rocket down
+                  if a failure is detected and is responsible for delivering the payload. You can find a good example for an advanced rocket computer
+                  <a class="linkToWebsite" href="https://www.youtube.com/watch?v=xIMaAhIL3ZY&list=PLyV774-3p8348Fl5V6ciIBh0ZA446q93I">HERE<a/>.
+                  It is very important to program the computer relaiable and that you include certain failsafes for example: what happens when you receive data from the groundstation that
+                  is corrupted or when a sensor fails? These are important things to consider BEFORE the launch, because you wanna be prepared for something like that when it happens on a real launch
                 </p>
               </div>
             </div>
@@ -148,7 +162,7 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-6 order-lg-1">
-              <img src="img/rocket_payload.PNG" alt="Payloadsection">
+              <img src="img/rocket_payload.png" alt="Payloadsection">
             </div>
 
             <div class="col-lg-6 order-lg-2">
@@ -159,7 +173,9 @@
                   The payload section, most of the time, is the top end of a rocket and is designed with aerodynamics in mind.
                   Of course, it's made to transport cargo. Therefore it has plenty of space on the inside for satellites or
                   other possible cargo.
-                  For modelrockets cargo is not that usual because the lighter the rocket the easier it is to launch.
+                  For modelrockets cargo is not that usual because the lighter the rocket the easier it is to launch. Sometimes people put small animals like ants
+                  on their rocket. The most common type of cargo is a small camera recording a video or a small secondary computer meassuring the environtment.
+
                 </p>
               </div>
             </div>
