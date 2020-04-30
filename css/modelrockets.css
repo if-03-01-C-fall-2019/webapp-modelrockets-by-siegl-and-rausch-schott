@@ -37,6 +37,33 @@
   padding: 20px;
 }
 
+#submitButton {
+  margin: 50px;
+  padding: 15px 60px;
+
+  background-color: #00bf6f;
+  color: white;
+
+  border-radius: 4px;
+}
+
+#errorArticle {
+  background-color: red;
+  color: white;
+  border-width: 2px;
+  border-color: gray;
+  border-radius: 4px;
+  border-style: solid;
+
+  padding: 20px;
+
+  margin: 10px;
+  margin-top: 30px;
+
+  text-align: center;
+}
+
+
 /* *******/
 /*Classes*/
 /*********/
@@ -115,6 +142,42 @@
   text-decoration: underline;
   font-weight: bold;
 }
+
+
+/*Questions */
+.answerHead {
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+.questionArticle{
+  color: white;
+  background-color: black;
+
+  border-radius: 4px;
+/*
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+  */
+  padding: 20px;
+  margin: 10px;
+}
+
+.questionArticle + .questionArticle {
+  margin-top: 30px;
+}
+
+.question{
+  background-color: inherit;
+  color: yellow;
+
+  
+}
+
+/* ********/
+/*ELements*/
+/**********/
 
 nav a {
   transition: background-color 0.25s;

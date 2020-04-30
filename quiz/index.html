@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../css/modelrockets.css">
+
+    <script type="text/javascript">
+      function checkAnswers(){
+        //Not implemented
+      }
+
+      function loadQuestions() {
+        //Not implemented
+      }
+    </script>
   </head>
   <body>
     <section id="nav">
@@ -35,16 +45,46 @@
     <section id="content">
 
         <section>
-          <div class="container w3-black w3-round">
-            <div class="w3-padding-24 w3-center">
-              <p class="ptext">This page is currently in development.</p>
+          <div class="container w3-round">
+            <div class="w3-padding-24">
+              <!-- <p class="ptext">This page is currently in development.</p> -->
+              <form action="javascript:checkAnswers()">
+                <article id="errorArticle" class="errorArticle" hidden>
+                  <h3>Bitte füllen Sie alle Antworten aus!</h3>
+                </article>
+
+                <article class="questionArticle">
+                  <h5>Information</h5>
+                  <p class="question">
+                  Free Space for information of other stuff
+                </p>
+                </article>
+
+                <article class="questionArticle">
+                  <h5>Testquestion</h5>
+                  <p class="question">
+                  I have no idea what I can write right here!
+                </p>
+
+                <label class="answerHead">Ihre Antwort</label>
+                <select class="form-control" id="answer1">
+                  <option>Antwort auswählen. . .</option>
+                  <option>Test1</option>
+                  <option>Test2</option>
+                  <option>Test3</option>
+                  <option>Test4</option>
+                </select>
+                </article>
+              </form>
             </div>
           </div>
         </section>
 
       </section>
+
+
+      <script type="text/javascript">
+        loadQuestions();
+      </script>
   </body>
-
-
-
 </html>
