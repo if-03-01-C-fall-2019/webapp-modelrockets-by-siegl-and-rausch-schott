@@ -30,6 +30,7 @@
         })
         .catch( function (error) {
           console.log("error: " + error);
+          document.getElementById('errorLoading').removeAttribute("hidden");
         });
       }
 
@@ -84,8 +85,11 @@
           <div class="container w3-round">
             <div class="w3-padding-24">
               <form action="javascript:checkAnswers()">
-                <article id="errorArticle" class="errorArticle" hidden>
+                <article id="errorAnswers" class="errorArticle" hidden>
                   <h3>You must fill in all answers!</h3>
+                </article>
+                <article id="errorLoading" class="errorArticle" hidden>
+                  <h3>There was an error while loading the questions.</h3>
                 </article>
 
                 <article id="information-quiz" class="questionArticle">
