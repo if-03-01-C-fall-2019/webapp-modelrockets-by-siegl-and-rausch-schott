@@ -38,13 +38,16 @@
 }
 
 #submitButton {
-  margin: 50px;
-  padding: 15px 60px;
-
   background-color: black;
-  color: yellow;
-
+  color: white;
   border-radius: 4px;
+  border-color: yellow;
+  padding: 15px 60px;
+}
+
+#gotitButton{
+  padding: 10px 30px;
+  margin-left: 89%;
 }
 
 #errorArticle {
@@ -221,6 +224,14 @@ dt {
 
   margin-top: 20px;
 }
+
+button{
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  border-color: yellow;
+}
+
 
 img.imgRight {
   float: right

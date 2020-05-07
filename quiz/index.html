@@ -11,13 +11,47 @@
     <link rel="stylesheet" href="../css/modelrockets.css">
 
     <script type="text/javascript">
-      function checkAnswers(){
-        console.log("checkanswers");
+    var globalQuestions;
 
+    function initQuiz(){
+      //Remove Information article
+      var element = document.getElementById('information-quiz');
+      element.parentNode.removeChild(element);
+
+      //Get Questions
+      fetchQuestions();
+    }
+
+      function fetchQuestions(){
+        fetch("http://dev.byiconic.at:3000/questions").then (response => response.json())
+        .then(function(data){
+          globalQuestions = data;
+          loadQuestions(data);
+        })
+        .catch( function (error) {
+          console.log("error: " + error);
+        });
       }
 
-      function loadQuestions() {
-        console.log("loadquestions");
+      function loadQuestions(questions) {
+        console.log("loading questions");
+
+        var fullOutput = "";
+        for(let i = 0; i < 10; i++){
+          var question = questions[i];
+
+          var output = "<article class=\"questionArticle\"><h5>Question No. "+(i+1)+"</h5><p class=\"question\">"+question.Question+"</p><label class=\"answerHead\">Ihre Antwort</label><select class=\"form-control\" id=\"answer"+(i+1)+"\"><option>Antwort auswählen. . .</option><option>"+question.AnswerOne+"</option><option>"+question.AnswerTwo+"</option><option>"+question.AnswerThree+"</option><option>"+question.AnswerFour+"</option></select></article>";
+          fullOutput += output;
+        }
+
+        fullOutput += "<section><div class=\"container\"><div class=\"text-center\"><input id=\"submitButton\"type=\"submit\"value=\"CheckAnswers\"></div></div></section>"
+        document.getElementById('questions').innerHTML = fullOutput;
+
+        console.log("loaded questions");
+      }
+
+      function checkAnswers(){
+        console.log("checking answers");
 
       }
     </script>
@@ -40,7 +74,7 @@
         <!-- Navbar ende -->
 
         <div class="w3-yellow w3-card-4">
-          <h1 id="heading">Quiz - Test your rocket knowledge</h1>
+          <h1 id="heading">Quiz - Test your knowledge</h1>
         </div>
     </section>
 
@@ -54,50 +88,26 @@
                   <h3>You must fill in all answers!</h3>
                 </article>
 
-                <article class="questionArticle">
+                <article id="information-quiz" class="questionArticle">
                   <h5>Information</h5>
                   <p class="question">
-                  Fill in your answers and click the "CheckAnswers" button to check your answers.
+                  Read the following questions below and select your answer. After you filled in all your answers, click the "CheckAnswers" button to check your answers and see your score.
                   <br>
-                  Afterwards, you will see your score.
+                  Good luck!
                 </p>
+                <button id="gotitButton" onclick="initQuiz()">Got it!</button>
                 </article>
 
-                <article class="questionArticle">
-                  <h5>Question No. 1</h5>
-                  <p class="question">
-                  Not automated yet, because we don't have a JSON Server running at the moment.
-                </p>
+                <div id="questions">
+                  <br>
+                  <br>
 
-                <label class="answerHead">Ihre Antwort</label>
-                <select class="form-control" id="answer1">
-                  <option>Antwort auswählen. . .</option>
-                  <option>Test1</option>
-                  <option>Test2</option>
-                  <option>Test3</option>
-                  <option>Test4</option>
-                </select>
-                </article>
-
-
-                <!-- Submit Button -->
-                <section>
-                  <div class="container">
-                    <div class="text-center">
-                      <input id="submitButton" type="submit" value="CheckAnswers">
-                    </div>
-                  </div>
-                </section>
+                </div>
 
               </form>
             </div>
           </div>
         </section>
       </section>
-
-
-      <script type="text/javascript">
-        loadQuestions();
-      </script>
   </body>
 </html>
