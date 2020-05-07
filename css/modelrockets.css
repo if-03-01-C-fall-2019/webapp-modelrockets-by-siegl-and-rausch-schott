@@ -41,8 +41,8 @@
   margin: 50px;
   padding: 15px 60px;
 
-  background-color: #00bf6f;
-  color: white;
+  background-color: black;
+  color: yellow;
 
   border-radius: 4px;
 }
@@ -172,7 +172,7 @@
   background-color: inherit;
   color: yellow;
 
-  
+
 }
 
 /* ********/
