@@ -8,4 +8,4 @@ We initially wanted to make a rocket that can be launched with a click of a butt
 * Collect questions and save them on the server
 * Connect the website with the server
 
-For more information on our approach, view the issues tab.
+For more information on our approach, view the [issues tab](https://github.com/if-03-01-C-fall-2019/webapp-modelrockets-by-siegl-and-rausch-schott/issues).
