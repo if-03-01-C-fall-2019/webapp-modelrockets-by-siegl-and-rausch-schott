@@ -1,6 +1,6 @@
 # Plans for our WebApp
 ## Plan
-We initially wanted to make a rocket that can be launched with a click of a button, but we decided it would be cooler to make a quiz about rockets and space in general. Therefore we use a JSON-Server to store the questions, answers and results.
+We initially wanted to make a rocket that can be launched with a click of a button, but we decided it would be cooler to make a quiz about rockets and space in general. Therefore we use a JSON-Server to store the questions, answers and results. We also plan to have a site that represents the results of all players in terms of percentage. Every player influences those mentioned results.
 
 ## Steps to a finished Quiz
 * Create nice looking design for Quiz (HTML, CSS)
