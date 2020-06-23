@@ -23,12 +23,41 @@ function fetchQuestions(){
   .then(function(data){
 
     //Load Questions
-    loadQuestions(data);
+    loadQuestions(pickRandomQuestions(data));
   })
   .catch( function (error) {
     console.error("error: " + error);
     document.getElementById('errorLoading').removeAttribute("hidden");
   });
+}
+
+//
+// Returns a random number between 0 and 'max'
+//
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+//
+// Picks 10 random questions from all questions fetched from the JSON-Server
+//
+function pickRandomQuestions(questions) {
+  let result = [];
+  let used = [];
+
+  let counter = 0;
+  while(counter < 10){
+    let i = getRandomInt(questions.length);
+    while(used.includes(i)) {
+      i = getRandomInt(questions.length);
+    }
+
+    result.push(questions[i]);
+    used.push(i);
+    counter++;
+  }
+
+  return result;
 }
 
 //
@@ -56,7 +85,7 @@ function loadQuestions(questions) {
   }
 
   //Create and append "CheckAnswers" Button
-  let btnCheckAnswers = ElementCreator.createCheckAnswersBtn(); fullOutput += "<section><div class=\"container\"><div class=\"text-center\"><input id=\"submitButton\"type=\"submit\"value=\"CheckAnswers\"></div></div></section>"
+  let btnCheckAnswers = ElementCreator.createCheckAnswersBtn();
   document.getElementById("questions").appendChild(btnCheckAnswers);
 
   console.log("loaded questions");
@@ -114,7 +143,7 @@ function updateCountsOnServer(current){
 
   //PUT Request to update the values
   fetch('http://dev.byiconic.at:3000/info', {
-    method: 'PUT', // or 'PUT'
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -136,8 +165,20 @@ function showResults(){
   ownPercentage = (correctAnswerCount / 10) * 100;
 
   //Create Result Elements
+  let questions = document.querySelectorAll(".question");
+  let answers = document.querySelectorAll("select.answerSelection");
+  let answersTable = ElementCreator.createAnswerTable();
+  answersTable.appendChild(ElementCreator.createAnswerTableTopRow());
+  for(let i = 0; i < answers.length; i++) {
+    if(answers[i].value != rightAnswers[i]){
+      answersTable.appendChild(ElementCreator.createAnswerTableRow(questions[i].innerText, answers[i].value, rightAnswers[i]));
+    }
+  }
+
   let ownResultElem = ElementCreator.createOwnResultArticle(ownPercentage);
   let averageOutputElem = ElementCreator.createAverageResultArticle(averagePercent);
+
+  ownResultElem.appendChild(answersTable);
 
   //Remove all childs of questions div
   let contentDiv = document.getElementById('questions');
