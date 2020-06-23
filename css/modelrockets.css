@@ -178,12 +178,6 @@
 
 }
 
-.answerResponse{
-  font-size: 14px;
-  background-color: inherit;
-  color: white;
-  
-}
 
 /* ********/
 /*ELements*/
@@ -254,4 +248,30 @@ li.manuallist {
   background-color: black;
   color:white;
   margin: 20px;
+}
+
+table.answersTable{
+  width: 100%;
+  border-radius: 10px;
+  border-collapse: collapse;
+  border: 3px solid gray;
+  border-radius: 10px;
+}
+
+th.answersTable{
+  border: 3px solid gray;
+  background-color: #ffeb3b;
+  color: black;
+  padding: 7px;
+}
+
+td.answersTable{
+  border: 3px solid gray;
+  padding: 2px;
+  font-family: "consolas"
+}
+
+tr.answersTable:nth-child(odd){
+  background-color: #292929;
+  color:inherit;
 }
