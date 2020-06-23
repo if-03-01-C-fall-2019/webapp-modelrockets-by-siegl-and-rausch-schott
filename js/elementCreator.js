@@ -5,6 +5,9 @@ class ElementCreator{
   // 2) Creates the "CheckAnswers" Button
   // 3) Creates the article for the own result
   // 4) Creates the article for the average result
+  // 5) Creates a basic table element for the incorrect answers
+  // 6) Creates the top row for the mentioned table
+  // 7) Creates a row for the mentioned table
   //
   static createQuestionArticle(question, answerArr, i){
     let result = document.createElement("article");
@@ -22,7 +25,7 @@ class ElementCreator{
     label.innerText = "Your Answer";
 
     let select = document.createElement("select");
-    select.setAttribute("class", "form-control");
+    select.setAttribute("class", "form-control answerSelection");
     select.setAttribute("id", "answer"+(i+1));
 
     let option1 = document.createElement("option");
@@ -109,6 +112,53 @@ class ElementCreator{
 
     return result;
   }
+  static createAnswerTable(){
+    let result = document.createElement("table");
+    result.setAttribute("class", "answersTable");
 
+    return result;
+  }
+  static createAnswerTableTopRow(){
+    let result = document.createElement("tr");
+    let col1 = document.createElement("th");
+    let col2 = document.createElement("th");
+    let col3 = document.createElement("th");
+
+    col1.innerText = "Question";
+    col1.setAttribute("class", "answersTable");
+    col2.innerText = "Your Answer";
+    col2.setAttribute("class", "answersTable");
+    col3.innerText = "Correct Answer";
+    col3.setAttribute("class", "answersTable");
+
+    result.setAttribute("class", "answersTable");
+
+    result.appendChild(col1);
+    result.appendChild(col2);
+    result.appendChild(col3);
+
+    return result;
+  }
+  static createAnswerTableRow(question, answer, rightAnswer){
+    let result = document.createElement("tr");
+    let col1 = document.createElement("td");
+    let col2 = document.createElement("td");
+    let col3 = document.createElement("td");
+
+    col1.innerText = question;
+    col1.setAttribute("class", "answersTable");
+    col2.innerText = answer;
+    col2.setAttribute("class", "answersTable");
+    col3.innerText = rightAnswer;
+    col3.setAttribute("class", "answersTable");
+
+    result.setAttribute("class", "answersTable");
+
+    result.appendChild(col1);
+    result.appendChild(col2);
+    result.appendChild(col3);
+
+    return result;
+  }
 
 }
