@@ -19,7 +19,7 @@ function initQuiz(){
 // Gets the questions from the JSON-Server
 //
 function fetchQuestions(){
-  fetch("http://dev.byiconic.at:3000/questions").then (response => response.json())
+  fetch("http://dev.byiconic.at:3001/questions").then (response => response.json())
   .then(function(data){
 
     //Load Questions
@@ -121,7 +121,7 @@ function checkAnswers(){
 //
 function saveToServerAndShowResults(){
   //Get CurrentCount
-  fetch("http://dev.byiconic.at:3000/info").then (response => response.json())
+  fetch("http://dev.byiconic.at:3001/info").then (response => response.json())
   .then( function(data){
     updateCountsOnServer(data);
   })
@@ -142,7 +142,7 @@ function updateCountsOnServer(current){
   averagePercent = (newInfo.correctAnswers / newInfo.totalAnswers) * 100;
 
   //PUT Request to update the values
-  fetch('http://dev.byiconic.at:3000/info', {
+  fetch('http://dev.byiconic.at:3001/info', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
